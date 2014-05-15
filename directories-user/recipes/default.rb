@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: ami-setup
+# Cookbook Name::  directories-user
 # Recipe:: default
 #
 # Copyright 2014, YOUR_COMPANY_NAME
