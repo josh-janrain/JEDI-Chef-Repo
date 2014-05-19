@@ -13,6 +13,10 @@ apt_package "curl" do
   action :install
 end
 
+apt_package "git" do
+  action :install
+end
+
 apt_package "unzip" do
   action :install
 end
@@ -40,3 +44,13 @@ end
 python_pip "awscli" do
   action :install
 end
+
+#remote_file "/tmp/scala-#{node[:scala][:version]}.tgz" do
+#	source "http://www.scala-lang.org/files/archive/scala-#{node[:scala][:version]}.tgz"
+#end
+
+remote_file "/tmp/scala-2.9.2.tgz" do
+	source "http://www.scala-lang.org/files/archive/scala-2.9.2.tgz"
+end
+
+
