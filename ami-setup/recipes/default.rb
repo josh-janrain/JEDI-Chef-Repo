@@ -6,7 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-
 include_recipe "python"
 
 apt_package "curl" do
@@ -45,12 +44,34 @@ python_pip "awscli" do
   action :install
 end
 
-#remote_file "/tmp/scala-#{node[:scala][:version]}.tgz" do
-#	source "http://www.scala-lang.org/files/archive/scala-#{node[:scala][:version]}.tgz"
-#end
-
-remote_file "/tmp/scala-2.9.2.tgz" do
-	source "http://www.scala-lang.org/files/archive/scala-2.9.2.tgz"
+apt_package "libhawtjni-runtime-java" do
+	action :install
 end
 
+apt_package "libjansi-native-java" do
+	action :install
+end
 
+apt_package "libjansi-java" do
+	action :install
+end
+
+remote_file "/tmp/scala-#{node[:scala][:version]}.deb" do
+	source "http://www.scala-lang.org/files/archive/scala-#{node[:scala][:version]}.deb"
+end
+
+dpkg_package "scala" do
+	source "/tmp/scala-#{node[:scala][:version]}.deb"
+	version "#{node[:scala][:version]}"
+	action :install
+end
+
+remote_file "/tmp/sbt-#{node[:sbt][:version]}.deb" do
+	source "http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/#{node[:sbt][:version]}/sbt.deb"
+end
+
+dpkg_package "sbt" do
+	source "/tmp/sbt-#{node[:sbt][:version]}.deb"
+	version "#{node[:sbt][:version]}"
+	action :install
+end
