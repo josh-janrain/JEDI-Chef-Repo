@@ -12,5 +12,37 @@ node[:deploy].each do |application, deploy|
     deploy_data deploy
     app application
   end
-#add link from scripts/jedi-upstart.conf to to /etc/init/jedi.conf
+end
+
+link "/svr/www/jedi/current/scripts/jedi-upstart.conf" do
+	to "/etc/init/jedi.conf"
+	link_type :symbolic
+end
+
+file "/svr/www/jedi/current/scripts/jedi-cluster.sh" do
+	owner "jedi"
+	group "jedi"
+	mode "0755"
+	action :modify
+end
+
+file "/svr/www/jedi/current/scripts/jedi-service.sh" do
+	owner "jedi"
+	group "jedi"
+	mode "0755"
+	action :modify
+end
+
+file "/svr/www/jedi/current/scripts/jedi-upstart.sh" do
+	owner "jedi"
+	group "jedi"
+	mode "0755"
+	action :modify
+end
+
+file "/svr/www/jedi/current/scripts/start-jedi.sh" do
+	owner "jedi"
+	group "jedi"
+	mode "0755"
+	action :modify
 end
