@@ -80,15 +80,15 @@ apt_package "libjansi-java" do
 	action :install
 end
 
-remote_file "/tmp/scala-#{node[:scala][:version]}.deb" do
-	source "http://www.scala-lang.org/files/archive/scala-#{node[:scala][:version]}.deb"
-end
-
-dpkg_package "scala" do
-	source "/tmp/scala-#{node[:scala][:version]}.deb"
-	version "#{node[:scala][:version]}"
-	action :install
-end
+#remote_file "/tmp/scala-#{node[:scala][:version]}.deb" do
+#	source "http://www.scala-lang.org/files/archive/scala-#{node[:scala][:version]}.deb"
+#end
+#
+#dpkg_package "scala" do
+#	source "/tmp/scala-#{node[:scala][:version]}.deb"
+#	version "#{node[:scala][:version]}"
+#	action :install
+#end
 
 remote_file "/tmp/sbt-#{node[:sbt][:version]}.deb" do
 	source "http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/#{node[:sbt][:version]}/sbt.deb"
