@@ -14,30 +14,30 @@ node[:deploy].each do |application, deploy|
   end
 end
 
-link "/svr/www/jedi/current/scripts/jedi-upstart.conf" do
+link "/srv/www/jedi/current/scripts/jedi-upstart.conf" do
 	to "/etc/init/jedi.conf"
 	link_type :symbolic
 end
 
-file "/svr/www/jedi/current/scripts/jedi-cluster.sh" do
+file "/srv/www/jedi/current/scripts/jedi-cluster.sh" do
 	owner "jedi"
 	group "jedi"
 	mode "0755"
 end
 
-file "/svr/www/jedi/current/scripts/jedi-service.sh" do
+file "/srv/www/jedi/current/scripts/jedi-service.sh" do
 	owner "jedi"
 	group "jedi"
 	mode "0755"
 end
 
-file "/svr/www/jedi/current/scripts/jedi-upstart.sh" do
+file "/srv/www/jedi/current/scripts/jedi-upstart.sh" do
 	owner "jedi"
 	group "jedi"
 	mode "0755"
 end
 
-file "/svr/www/jedi/current/scripts/start-jedi.sh" do
+file "/srv/www/jedi/current/scripts/start-jedi.sh" do
 	owner "jedi"
 	group "jedi"
 	mode "0755"
