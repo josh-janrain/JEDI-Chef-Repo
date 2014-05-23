@@ -7,6 +7,31 @@
 #
 include_recipe "python"
 
+user 'jedi' do
+	action :create
+end
+
+directory "/opt/jedi" do
+	owner "jedi"
+	group "jedi"
+	mode 00644
+	action :create
+end
+
+directory "/var/jedi" do
+	owner "jedi"
+	group "jedi"
+	mode 00644
+	action :create
+end
+
+directory "/var/log/jedi" do
+	owner "jedi"
+	group "jedi"
+	mode 00644
+	action :create
+end
+
 apt_package "curl" do
   action :install
 end
@@ -73,29 +98,4 @@ dpkg_package "sbt" do
 	source "/tmp/sbt-#{node[:sbt][:version]}.deb"
 	version "#{node[:sbt][:version]}"
 	action :install
-end
-
-user 'jedi' do
-	action :create
-end
-
-directory "/opt/jedi" do
-	owner "jedi"
-	group "jedi"
-	mode 00644
-	action :create
-end
-
-directory "/var/jedi" do
-	owner "jedi"
-	group "jedi"
-	mode 00644
-	action :create
-end
-
-directory "/var/log/jedi" do
-	owner "jedi"
-	group "jedi"
-	mode 00644
-	action :create
 end
