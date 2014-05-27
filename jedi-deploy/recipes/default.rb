@@ -47,7 +47,6 @@ template "/etc/opt/jedi/install.conf" do
 	source "install.conf.erb"
 	owner "jedi"
 	group "jedi"
-	mode "0700"
 	variables({
 		:install_home => "/srv/www/jedi/current",
 		:install_cwd => "/var/jedi",
