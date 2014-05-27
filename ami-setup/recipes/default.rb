@@ -25,6 +25,13 @@ directory "/var/jedi" do
 	action :create
 end
 
+directory "/etc/opt/jedi" do
+#	owner "jedi"
+#	group "jedi"
+#	mode 00644
+	action :create
+end
+
 directory "/var/log/jedi" do
 	owner "jedi"
 	group "jedi"
