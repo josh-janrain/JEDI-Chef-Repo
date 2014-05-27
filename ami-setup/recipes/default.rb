@@ -14,28 +14,28 @@ end
 directory "/opt/jedi" do
 	owner "jedi"
 	group "jedi"
-	mode 00644
+	mode 00766
 	action :create
 end
 
 directory "/var/jedi" do
 	owner "jedi"
 	group "jedi"
-	mode 00644
+	mode 00766
 	action :create
 end
 
 directory "/etc/opt/jedi" do
 	owner "jedi"
 	group "jedi"
-	mode 00644
+	mode 00766
 	action :create
 end
 
 directory "/var/log/jedi" do
 	owner "jedi"
 	group "jedi"
-	mode 00644
+	mode 00766
 	action :create
 end
 
