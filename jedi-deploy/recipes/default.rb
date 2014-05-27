@@ -42,3 +42,13 @@ file "/srv/www/jedi/current/scripts/start-jedi.sh" do
 	group "jedi"
 	mode "0755"
 end
+
+template "/etc/opt/jedi/install.conf" do
+	source "install.conf.erb"
+	variables({
+		:install_home => "/srv/www/jedi/current",
+		:install_cwd => "/var/jedi",
+		:install_logdir => "/var/log/jedi",
+		:install_user => "jedi"
+		})
+end
