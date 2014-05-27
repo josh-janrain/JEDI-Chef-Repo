@@ -26,9 +26,9 @@ directory "/var/jedi" do
 end
 
 directory "/etc/opt/jedi" do
-#	owner "jedi"
-#	group "jedi"
-#	mode 00644
+	owner "jedi"
+	group "jedi"
+	mode 00644
 	action :create
 end
 
