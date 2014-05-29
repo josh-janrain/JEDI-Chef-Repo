@@ -111,3 +111,13 @@ dpkg_package "sbt" do
 	version "#{node[:sbt][:version]}"
 	action :install
 end
+
+remote_file "/tmp/jq-#{node[:jq][:version]}.deb" do
+	source "http://security.ubuntu.com/ubuntu/pool/universe/j/jq/jq_#{node[:jq][:version]}.deb"
+end
+
+dpkg_package "jq" do
+	source "http://security.ubuntu.com/ubuntu/pool/universe/j/jq/jq_#{node[:jq][:version]}.deb"
+	version "#{node[:jq][:version]}"
+	action :install
+end
