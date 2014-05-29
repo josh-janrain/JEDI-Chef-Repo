@@ -83,11 +83,6 @@ apt_package "libjansi-native-java" do
 	action :install
 end
 
-apt_package "jq" do
-	version "1.3-1.1ubuntu1"
-	action :install
-end
-
 apt_package "libjansi-java" do
 	action :install
 end
