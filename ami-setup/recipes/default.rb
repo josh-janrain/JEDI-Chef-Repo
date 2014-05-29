@@ -117,7 +117,7 @@ remote_file "/tmp/jq-#{node[:jq][:version]}.deb" do
 end
 
 dpkg_package "jq" do
-	source "http://security.ubuntu.com/ubuntu/pool/universe/j/jq/jq_#{node[:jq][:version]}.deb"
+	source "/tmp/jq-#{node[:jq][:version]}.deb"
 	version "#{node[:jq][:version]}"
 	action :install
 end
